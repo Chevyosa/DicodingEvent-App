@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.Scaffold
@@ -14,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.chev.dicodingeventapp.ui.components.cards.CarouselCard
 import com.chev.dicodingeventapp.ui.components.cards.EventCard
 import com.chev.dicodingeventapp.ui.theme.DicodingEventAppTheme
 
@@ -46,7 +48,27 @@ fun HomeScreen() {
 
             Spacer(modifier = Modifier.padding(bottom = 12.dp))
 
-            EventCard()
+            Column(
+                modifier = Modifier.fillMaxWidth()
+            ){
+                Text(text = "Upcoming Events")
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                CarouselCard()
+            }
+
+            Spacer(modifier = Modifier.padding(bottom = 20.dp))
+
+            Column(
+                modifier = Modifier.fillMaxWidth()
+            ){
+                Text(text = "Finished Events")
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                EventCard()
+            }
         }
     }
 }
