@@ -11,13 +11,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.chev.dicodingeventapp.ui.components.cards.EventCard
 import com.chev.dicodingeventapp.ui.components.searchbar.EventSearchBar
 import com.chev.dicodingeventapp.ui.theme.DicodingEventAppTheme
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun FinishedScreen() {
+fun FinishedScreen(navHostController: NavHostController) {
 
     Scaffold(
         modifier = Modifier
@@ -36,13 +37,5 @@ fun FinishedScreen() {
 
             EventCard()
         }
-    }
-}
-
-@Preview
-@Composable
-private fun FinishedScreenPreview() {
-    DicodingEventAppTheme {
-        FinishedScreen()
     }
 }

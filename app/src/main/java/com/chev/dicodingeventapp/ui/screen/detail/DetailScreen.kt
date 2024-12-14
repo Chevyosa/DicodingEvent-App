@@ -11,18 +11,26 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.chev.dicodingeventapp.ui.components.buttons.RegisterButton
 import com.chev.dicodingeventapp.ui.components.event_information.EventDetailImage
 import com.chev.dicodingeventapp.ui.components.event_information.EventOverview
 import com.chev.dicodingeventapp.ui.components.event_information.EventSummary
 import com.chev.dicodingeventapp.ui.theme.DicodingEventAppTheme
+import com.chev.dicodingeventapp.ui.topbar.TopAppBar
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun DetailsScreen() {
+fun DetailsScreen(navHostController: NavHostController) {
     Scaffold(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxSize(),
+        topBar = {
+            TopAppBar(
+                title = "Event Detail",
+                onBackClick = { navHostController.popBackStack() }
+            )
+        }
     ){
         Column(
             modifier = Modifier
@@ -44,13 +52,5 @@ fun DetailsScreen() {
 
             RegisterButton()
         }
-    }
-}
-
-@Preview
-@Composable
-private fun DetailScreenPreview() {
-    DicodingEventAppTheme {
-        DetailsScreen()
     }
 }

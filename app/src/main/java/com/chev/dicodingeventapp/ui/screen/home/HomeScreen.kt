@@ -15,13 +15,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.chev.dicodingeventapp.ui.components.cards.CarouselCard
 import com.chev.dicodingeventapp.ui.components.cards.EventCard
 import com.chev.dicodingeventapp.ui.theme.DicodingEventAppTheme
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navHostController: NavHostController) {
     Scaffold(
         modifier = Modifier
             .fillMaxSize()
@@ -70,13 +71,5 @@ fun HomeScreen() {
                 EventCard()
             }
         }
-    }
-}
-
-@Preview
-@Composable
-private fun HomeScreenPreview() {
-    DicodingEventAppTheme {
-        HomeScreen()
     }
 }
